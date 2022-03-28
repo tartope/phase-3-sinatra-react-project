@@ -24,4 +24,41 @@ class ApplicationController < Sinatra::Base
     patient.to_json
   end
 
+  get '/patient_floors' do  
+    patient_floors = PatientFloor.all
+    patient_floors.to_json
+  end
+
+  post '/patient_floors' do
+    patient_floor = PatientFloor.create(
+      floor_number: params[:floor_number],
+      room_number: params[:room_number]
+    )
+    patient_floor.to_json
+  end
+
+  delete '/patient_floors/:id' do
+    patient_floor = PatientFloor.find(params[:id])
+    patient_floor.destroy
+    patient_floor.to_json
+  end
+
+  get '/therapists' do  
+    therapists = Therapist.all
+    therapists.to_json
+  end
+
+  post '/therapists' do
+    therapist = Therapist.create(
+      name: params[:name]
+    )
+    therapist.to_json
+  end
+
+  delete '/therapists/:id' do
+    therapist = Therapist.find(params[:id])
+    therapist.destroy
+    therapist.to_json
+  end
+
 end
