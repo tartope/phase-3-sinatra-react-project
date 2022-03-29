@@ -4,7 +4,12 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get '/patients' do 
     patient = Patient.all
-    patient.to_json
+    patient.to_json(
+      include: {
+        therapist: { only: [:name] },
+        patient_floor: { only: [:room_number] }
+      }
+    )
   end
 
   post '/patients' do
