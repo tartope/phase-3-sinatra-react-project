@@ -20,7 +20,12 @@ class ApplicationController < Sinatra::Base
       patient_floor_id: params[:patient_floor_id],
       therapist_id: params[:therapist_id]
     )
-    patient.to_json
+    patient.to_json(
+      include: {
+        therapist: { only: [:name] },
+        patient_floor: { only: [:room_number] }
+      }
+    )
   end
 
   delete '/patients/:id' do

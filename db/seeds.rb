@@ -6,16 +6,16 @@ Patient.destroy_all
 puts "🌱 Seeding floors..."
 
 # Seed your database here
-f1 = PatientFloor.create(floor_number: 4, room_number: 401)
-f2 = PatientFloor.create(floor_number: 3, room_number: 301)
-f3 = PatientFloor.create(floor_number: 2, room_number: 201)
-f4 = PatientFloor.create(floor_number: 1, room_number: 101)
+f1 = PatientFloor.create(floor_number: 1, room_number: 101)
+f2 = PatientFloor.create(floor_number: 2, room_number: 201)
+f3 = PatientFloor.create(floor_number: 3, room_number: 301)
+f4 = PatientFloor.create(floor_number: 4, room_number: 401)
 
 puts "Creating therapists..."
 t1 = Therapist.create(name: "Rick")
-t2 = Therapist.create(name: "Morty")
-t3 = Therapist.create(name: "Mr. Meseeks")
-t4 = Therapist.create(name: "Gazorpazop")
+t2 = Therapist.create(name: "John")
+t3 = Therapist.create(name: "Tunisia")
+t4 = Therapist.create(name: "Evan")
 
 puts "Creating Patient..."
 Patient.create(patient_name: "Smith", patient_diagnosis: "stroke", age: 80, patient_floor_id: f1.id, therapist_id: t1.id)
