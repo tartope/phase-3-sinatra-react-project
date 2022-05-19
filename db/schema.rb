@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_03_28_135957) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "patient_floors", force: :cascade do |t|
     t.integer "floor_number"
     t.integer "room_number"
