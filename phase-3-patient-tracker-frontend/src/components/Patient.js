@@ -2,10 +2,10 @@ import React from "react";
 
 function Patient({ patient, handleDeletePatient }) {
 
-    function handleDeleteClick(event) {
-        // TODO: Delete the patient.
+    // function handleDeleteClick(event) {
+    //     // TODO: Delete the patient.
         
-    }
+    // }
     // console.log(patient)
 
     return(
